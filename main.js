@@ -47,8 +47,6 @@ function wins(player){
 	if($box1.hasClass(player) && $box2.hasClass(player) && $box3.hasClass(player)){
  		winner = player
  		scoreCounter();
- 		console.log(player);
-
  	}
 
 	if ($box4.hasClass(player) && $box5.hasClass(player) && $box6.hasClass(player)){
@@ -90,25 +88,22 @@ function wins(player){
 function scoreCounter() {
 	if (winner == 'x') {
  		scoreCounterX++;
- 		console.log(winner)
- 		pEditorX();
+ 		pEditor();
  		}
  	if (winner == 'o') {
- 		console.log(winner)
 		scoreCounterO++;
- 		pEditorO();
+ 		pEditor();
  	}
  			
  		
 }
 
-function pEditorX() {
+function pEditor() {
 	$('#x-win').text(scoreCounterX);
-	//$('body').removeClass('.x');
-	//$('p').removeClass('.o');
+	$('#o-win').text(scoreCounterO);
+	$('#board table td').removeClass('x');
+	$('#board table td').removeClass('o');
 }
 
-function pEditorO() {
-	$('#o-win').text(scoreCounterO);
-}
+
 
