@@ -26,3 +26,12 @@
 table{
 	table-layout: fixed;
 }
+
+h3{
+	margin: 0 auto;
+	height: 80px;
+	text-align: center;
+}
+
+
+

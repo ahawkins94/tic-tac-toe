@@ -16,6 +16,8 @@ var $box6 = $('#6')
 var $box7 = $('#7')
 var $box8 = $('#8')
 var $box9 = $('#9')
+var scoreCounterX = 0
+var scoreCounterO = 0
 
 function turns(){
 
@@ -42,7 +44,7 @@ turns()
 
 function wins(player){
 	if($box1.hasClass(player) && $box2.hasClass(player) && $box3.hasClass(player)){
-		console.log('win')
+ 		scoreCounter()
 	}
 
 	if ($box4.hasClass(player) && $box5.hasClass(player) && $box6.hasClass(player)){
@@ -70,8 +72,15 @@ function wins(player){
 	}
 
 	if ($box3.hasClass(player) && $box5.hasClass(player) && $box7.hasClass(player)){
-		console.log('win')
+		alert('')
 	}
+}
+
+function scoreCounter(player){
+	if (player = 'x') {
+ 			scoreCounterX++;
+ 			console.log(scoreCounterX);
+ 		} else scoreCounterO++
 }
 
 
