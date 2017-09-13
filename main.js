@@ -18,6 +18,7 @@ var $box8 = $('#8');
 var $box9 = $('#9');
 var scoreCounterX = 0;
 var scoreCounterO = 0;
+var winner
 
 function turns(){
 
@@ -44,54 +45,70 @@ turns();
 
 function wins(player){
 	if($box1.hasClass(player) && $box2.hasClass(player) && $box3.hasClass(player)){
+ 		winner = player
  		scoreCounter();
  		console.log(player);
 
  	}
 
 	if ($box4.hasClass(player) && $box5.hasClass(player) && $box6.hasClass(player)){
+		winner = player
 		scoreCounter()
 	}
 
 	if ($box7.hasClass(player) && $box8.hasClass(player) && $box9.hasClass(player)){
+		winner = player
 		scoreCounter()	
 	}
 
 	if($box1.hasClass(player) && $box4.hasClass(player) && $box7.hasClass(player)){
+		winner = player
 		scoreCounter()
 	}
 
 	if ($box2.hasClass(player) && $box5.hasClass(player) && $box8.hasClass(player)){
+		winner = player
 		scoreCounter()
 	}	
 
 	if ($box3.hasClass(player) && $box6.hasClass(player) && $box9.hasClass(player)){
+		winner = player
 		scoreCounter()
 	}
 
 	if ($box1.hasClass(player) && $box5.hasClass(player) && $box9.hasClass(player)){
+		winner = player
 		scoreCounter()
 	}
 
 	if ($box3.hasClass(player) && $box5.hasClass(player) && $box7.hasClass(player)){
+		winner = player
 		scoreCounter()
 	}
 }
 
-function scoreCounter(player){
-	if (player === 'x') {
- 			scoreCounterX++;
- 			pEditor();
- 		} else 
- 			scoreCounterO++;
- 			pEditor();
+function scoreCounter() {
+	if (winner == 'x') {
+ 		scoreCounterX++;
+ 		console.log(winner)
+ 		pEditorX();
+ 		}
+ 	if (winner == 'o') {
+ 		console.log(winner)
+		scoreCounterO++;
+ 		pEditorO();
+ 	}
+ 			
  		
 }
 
-function pEditor() {
-	$('p').children('#x-win').text(scoreCounterX);
-	$('p').children('#o-win').text(scoreCounterO);
+function pEditorX() {
+	$('#x-win').text(scoreCounterX);
 	//$('body').removeClass('.x');
 	//$('p').removeClass('.o');
+}
+
+function pEditorO() {
+	$('#o-win').text(scoreCounterO);
 }
 
