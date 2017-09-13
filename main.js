@@ -7,17 +7,17 @@
 //if winner - display winners message.
 
 var player1 = 1;
-var $box1 = $('#1')
-var $box2 = $('#2')
-var $box3 = $('#3')
-var $box4 = $('#4')
-var $box5 = $('#5')
-var $box6 = $('#6')
-var $box7 = $('#7')
-var $box8 = $('#8')
-var $box9 = $('#9')
-var scoreCounterX = 0
-var scoreCounterO = 0
+var $box1 = $('#1');
+var $box2 = $('#2');
+var $box3 = $('#3');
+var $box4 = $('#4');
+var $box5 = $('#5');
+var $box6 = $('#6');
+var $box7 = $('#7');
+var $box8 = $('#8');
+var $box9 = $('#9');
+var scoreCounterX = 0;
+var scoreCounterO = 0;
 
 function turns(){
 
@@ -39,13 +39,15 @@ function turns(){
 		}
 	});
 }
-turns()
+turns();
 
 
 function wins(player){
 	if($box1.hasClass(player) && $box2.hasClass(player) && $box3.hasClass(player)){
- 		scoreCounter()
-	}
+ 		scoreCounter();
+ 		console.log(player);
+
+ 	}
 
 	if ($box4.hasClass(player) && $box5.hasClass(player) && $box6.hasClass(player)){
 		scoreCounter()
@@ -77,15 +79,19 @@ function wins(player){
 }
 
 function scoreCounter(player){
-	if (player = 'x') {
+	if (player === 'x') {
  			scoreCounterX++;
- 			pEditor()
- 		} else scoreCounterO++
- 		pEditor()
+ 			pEditor();
+ 		} else 
+ 			scoreCounterO++;
+ 			pEditor();
+ 		
 }
 
 function pEditor() {
-	$('p').children('span').text(scoreCounterX);
+	$('p').children('#x-win').text(scoreCounterX);
+	$('p').children('#o-win').text(scoreCounterO);
+	//$('body').removeClass('.x');
+	//$('p').removeClass('.o');
 }
-
 
