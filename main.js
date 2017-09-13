@@ -48,41 +48,44 @@ function wins(player){
 	}
 
 	if ($box4.hasClass(player) && $box5.hasClass(player) && $box6.hasClass(player)){
-		console.log('win')
+		scoreCounter()
 	}
 
 	if ($box7.hasClass(player) && $box8.hasClass(player) && $box9.hasClass(player)){
-		console.log('win')
+		scoreCounter()	
 	}
 
 	if($box1.hasClass(player) && $box4.hasClass(player) && $box7.hasClass(player)){
-		console.log('win')
+		scoreCounter()
 	}
 
 	if ($box2.hasClass(player) && $box5.hasClass(player) && $box8.hasClass(player)){
-		console.log('win')
+		scoreCounter()
 	}	
 
 	if ($box3.hasClass(player) && $box6.hasClass(player) && $box9.hasClass(player)){
-		console.log('win')
+		scoreCounter()
 	}
 
 	if ($box1.hasClass(player) && $box5.hasClass(player) && $box9.hasClass(player)){
-		console.log('win')
+		scoreCounter()
 	}
 
 	if ($box3.hasClass(player) && $box5.hasClass(player) && $box7.hasClass(player)){
-		alert('')
+		scoreCounter()
 	}
 }
 
 function scoreCounter(player){
 	if (player = 'x') {
  			scoreCounterX++;
- 			console.log(scoreCounterX);
+ 			pEditor()
  		} else scoreCounterO++
+ 		pEditor()
 }
 
-
+function pEditor() {
+	$('p').children('span').text(scoreCounterX);
+}
 
 
