@@ -4,23 +4,25 @@
 }
 
 .middlec{
-    border-left:1px solid #000;
-    border-right:1px solid #000;
+    border-left:1px solid;
+    border-right:1px solid;
 }
 
 .middler{
-    border-top:1px solid #000;
-    border-bottom:1px solid #000;
+    border-top:1px solid;
+    border-bottom:1px solid;
 }
 
 .x {
 	background-image: url(/Users/tech-a60/homework/tic-tac-toe/images/x.png);
 	background-size: 100px 100px;
+	background-repeat: no-repeat;
 }
 
 .o {
 	background-image:url(/Users/tech-a60/homework/tic-tac-toe/images/o.png);
 	background-size: 100px 100px;
+	background-repeat: no-repeat;
 }
 
 table{

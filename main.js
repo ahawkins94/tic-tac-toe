@@ -1,11 +1,3 @@
-// get a grid on the screen
-
-//when you click on each grid tile, make x and then o appear
-
-//after each player has made a move, check to see if someone has won.
-
-//if winner - display winners message.
-
 var player1 = 1;
 var $box1 = $('#1');
 var $box2 = $('#2');
@@ -19,9 +11,9 @@ var $box9 = $('#9');
 var scoreCounterX = 0;
 var scoreCounterO = 0;
 var winner;
+var count = 0;
 
 function turns(){
-
 
 	$('.square').click(function (event){
 
@@ -30,6 +22,8 @@ function turns(){
 
 			player1 = 0;
 			wins('x');
+			count++;
+			console.log(count);
 
 		} else {
 
@@ -37,6 +31,8 @@ function turns(){
 
 			player1 = 1;
 			wins('o');
+			count++;
+			console.log(count);
 		}
 	});
 }
@@ -84,7 +80,7 @@ function wins(player){
 		scoreCounter();
 	}
 
-	if ($box1.hasClass('x' || 'o') && $box2.hasClass('x' || 'o') && $box3.hasClass('x' || 'o') && $box4.hasClass('x' || 'o') && $box5.hasClass('x' || 'o') && $box6.hasClass('x' || 'o') && $box7.hasClass('x' || 'o') && $box8.hasClass('x' || 'o') && $box9.hasClass('x' || 'o')) {
+	if (count === 9) {
 		draw();
 	}
 }
@@ -110,8 +106,10 @@ function pEditor() {
 }
 
 function draw(){
+	console.log(count)
 	$('#board table td').removeClass('x');
 	$('#board table td').removeClass('o');
+	count = 0
 }
 
 
